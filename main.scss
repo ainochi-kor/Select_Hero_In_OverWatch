@@ -1,6 +1,8 @@
+$url: "./images";
+
 body {
   height: 100vh;
-  background-image: url(./images/bg.jpg);
+  background-image: url("#{$url}/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -8,89 +10,50 @@ body {
 
 .container {
   padding: 50px 0;
-}
-
-.container .heros {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 700px;
-  margin: 0 auto; /* 요소의 가운데 정렬 */
-  padding: 40px 20px;
-}
-
-.container .heros .hero {
-  width: 80px;
-  height: 84px;
-  background-color: #555;
-  margin: 4px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  border: 3px solid #fff;
-  transform: skewX(-14deg);
-  transition: transform .1s,
-    background-color .6s;
-  overflow: hidden;
-}
-
-.container .heros .hero:hover {
-  background-color: #ff9c00;
-  transform: scale(1.3) skewX(-14deg);
-  z-index: 1;
-}
-
-.container .heros .hero .image {
-  width: 140%;
-  height: 100%;
-  background-position: center;
-  background-size: 90px;
-  background-repeat: no-repeat;
-  transform: skew(14deg) translateX(-16px);
-}
-
-.container .heros .hero:nth-child(1) .image { background-image: url(./images/hero1.png);}
-.container .heros .hero:nth-child(2) .image { background-image: url(./images/hero2.png);}
-.container .heros .hero:nth-child(3) .image { background-image: url(./images/hero3.png);}
-.container .heros .hero:nth-child(4) .image { background-image: url(./images/hero4.png);}
-.container .heros .hero:nth-child(5) .image { background-image: url(./images/hero5.png);}
-.container .heros .hero:nth-child(6) .image { background-image: url(./images/hero6.png);}
-.container .heros .hero:nth-child(7) .image { background-image: url(./images/hero7.png);}
-.container .heros .hero:nth-child(8) .image { background-image: url(./images/hero8.png);}
-.container .heros .hero:nth-child(9) .image { background-image: url(./images/hero9.png);}
-.container .heros .hero:nth-child(10) .image { background-image: url(./images/hero10.png);}
-
-.container .heros .hero:nth-child(11) .image { background-image: url(./images/hero11.png);}
-.container .heros .hero:nth-child(12) .image { background-image: url(./images/hero12.png);}
-.container .heros .hero:nth-child(13) .image { background-image: url(./images/hero13.png);}
-.container .heros .hero:nth-child(14) .image { background-image: url(./images/hero14.png);}
-.container .heros .hero:nth-child(15) .image { background-image: url(./images/hero15.png);}
-.container .heros .hero:nth-child(16) .image { background-image: url(./images/hero16.png);}
-.container .heros .hero:nth-child(17) .image { background-image: url(./images/hero17.png);}
-.container .heros .hero:nth-child(18) .image { background-image: url(./images/hero18.png);}
-.container .heros .hero:nth-child(19) .image { background-image: url(./images/hero19.png);}
-.container .heros .hero:nth-child(20) .image { background-image: url(./images/hero20.png);}
-
-.container .heros .hero:nth-child(21) .image { background-image: url(./images/hero21.png);}
-.container .heros .hero:nth-child(22) .image { background-image: url(./images/hero22.png);}
-.container .heros .hero:nth-child(23) .image { background-image: url(./images/hero23.png);}
-.container .heros .hero:nth-child(24) .image { background-image: url(./images/hero24.png);}
-.container .heros .hero:nth-child(25) .image { background-image: url(./images/hero25.png);}
-.container .heros .hero:nth-child(26) .image { background-image: url(./images/hero26.png);}
-.container .heros .hero:nth-child(27) .image { background-image: url(./images/hero27.png);}
-.container .heros .hero:nth-child(28) .image { background-image: url(./images/hero28.png);}
-.container .heros .hero:nth-child(29) .image { background-image: url(./images/hero29.png);}
-.container .heros .hero:nth-child(30) .image { background-image: url(./images/hero30.png);}
-
-.container .heros .hero:nth-child(31) .image { background-image: url(./images/hero31.png);}
-.container .heros .hero:nth-child(32) .image { background-image: url(./images/hero32.png);}
-
-
-.container .logo {
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.container .logo img {
-  width: 100%;
+  .heros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto; /* 요소의 가운데 정렬 */
+    padding: 40px 20px;
+    .hero {
+      width: 80px;
+      height: 84px;
+      background-color: #555;
+      margin: 4px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      border: 3px solid #fff;
+      transform: skewX(-14deg);
+      transition: transform .1s,
+        background-color .6s;
+      overflow: hidden;
+      &:hover {
+        background-color: #ff9c00;
+        transform: scale(1.3) skewX(-14deg);
+        z-index: 1;
+      }
+      .image {
+        width: 140%;
+        height: 100%;
+        background-position: center;
+        background-size: 90px;
+        background-repeat: no-repeat;
+        transform: skew(14deg) translateX(-16px);
+      }
+      // .hero
+      @for $i from 1 through 32 {
+        &:nth-child(#{$i}) .image { background-image: url("#{$url}/hero#{$i}.png");}
+      }
+    }
+  }
+  .logo {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    img {
+      width: 100%;
+    }
+  }
 }
