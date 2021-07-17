@@ -5,7 +5,7 @@
 ## SCSS를 이용하여 오버워치 캐릭터 선택화면을 만들기.
 
 ### prompt
-> npm init -y
+> npm init -y  
 > npm i parcel-bundler -D
 
 npm을 이용하여 parcel-bundler를 개발자 모드로 install 한다.
